@@ -6,16 +6,8 @@ services:
     container_name: back_chatbot_app
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     environment:
       - PYTHONUNBUFFERED=1
     env_file:
       - .env
-
-#  ngrok:
-#    image: ngrok/ngrok:latest
-#    restart: unless-stopped
-#    command: http fastapi:8000
-#    environment:
-#      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+    restart: unless-stopped
