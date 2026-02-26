@@ -4,8 +4,7 @@ services:
   fastapi:
     build: .
     container_name: back_chatbot_app
-    ports:
-      - "8000:8000"
+    network_mode: "host"
     environment:
       - PYTHONUNBUFFERED=1
     env_file:
